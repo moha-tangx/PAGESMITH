@@ -1,0 +1,22 @@
+{
+  "name": "temp",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "pricing": "Free",
+  "packageManager": "npm@10.2.4",
+  "scripts": {
+    "dev": "nodemon --env-file .env ./index.js",
+    "start": "node --env-file .env ./index.js",
+    "test": "nodemon --env-file .env ./test/test.test.js"
+  },
+  "keywords": [
+    ""
+  ],
+  "author": "moha_tangx",
+  "license": "ISC"
+}
