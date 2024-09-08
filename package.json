@@ -10,9 +10,9 @@
   "pricing": "Free",
   "packageManager": "npm@10.2.4",
   "scripts": {
-    "dev": "nodemon --env-file .env ./index.js",
+    "dev": "node --watch --env-file .env ./index.js",
     "start": "node --env-file .env ./index.js",
-    "test": "nodemon --env-file .env ./test/test.test.js"
+    "test": "node --test --watch"
   },
   "keywords": [
     ""
