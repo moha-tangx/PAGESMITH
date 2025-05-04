@@ -26,8 +26,6 @@ npm install pagesmith
 
 This defaults to the views directory in the application root directory
 
-// user.ps
-
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -67,15 +65,15 @@ This defaults to the views directory in the application root directory
 // app.js
 
 ```js
-import { express } from "express";
+import { express } from "node:http";
 import { parseSync } from "pagesmith";
 import Users from "users.model.js"; //database model (ORM layer)
 
 const app = express();
 
-app.get("users/:userName", (req, res, next) => {
+app.get("users/:userName",(req,res,next)=>{
   const user = Users.find(req.params.userName);
-  if (!user) return res.status(404).json({ message: "user not found" });
-  return res.render("user.ps", user);
-});
+  if(!user) return res.status(404).json({message:"user not found"});
+  return res.render("user.ps",user)
+})
 ```

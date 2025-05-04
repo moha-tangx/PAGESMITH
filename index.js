@@ -6,15 +6,12 @@ import { readFile, readFileSync } from "node:fs";
  * @param {string} content
  * @param {string} object_name
  * @returns {string}
- * @param {{}} args
  */
 function parserEngine(content, args, object_name) {
   args; //args is used in the eval function as string
   const pattern = /\$\{.*?\}\$/gis;
-  const vars = content.match(pattern) ?? [];
-  const keys = vars.map((/** @type {string} */ v) =>
-    v.replace(/\$\{/, "").replace(/\}\$/, "")
-  );
+  const vars = content.match(pattern);
+  const keys = vars.map((v) => v.replace(/\$\{/, "").replace(/\}\$/, ""));
 
   for (const key of keys) {
     let value = key.trim().replace(/\s+/g, " ");
@@ -59,7 +56,7 @@ class CreateParser {
    * @param {path} file_path path to template to be built
    * @param {object} args object whose properties are to be replaced as arguments to the parameters in template
    * @param {string ?} object_name name of the object to be used in the template file, if it is not passed "args" must be used
-   * @returns {Promise<string>}
+   * @returns {promise<string>}
    */
   parse(file_path, args, object_name = "args") {
     file_path = join(this.views_dir_path, file_path);
