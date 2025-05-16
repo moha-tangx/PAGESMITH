@@ -1,7 +1,7 @@
 {
   "name": "temp",
   "version": "1.0.0",
-  "description": "",
+  "description": "a templating engine created to be compatible with all your node.js applications",
   "type": "module",
   "main": "index.js",
   "exports": {
@@ -15,7 +15,8 @@
     "test": "node --test"
   },
   "keywords": [
-    ""
+    "templating engine",
+    "cgi programming"
   ],
   "author": "moha_tangx",
   "license": "ISC"
