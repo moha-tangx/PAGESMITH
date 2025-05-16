@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { join, parse as parsePath } from "node:path";
 import { readFile, readFileSync } from "node:fs";
 
